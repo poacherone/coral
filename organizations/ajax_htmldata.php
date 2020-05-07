@@ -20,6 +20,7 @@
 
 include_once 'directory.php';
 include_once 'user.php';
+$target = getTarget();
 
 //shared html template for organization and resource issues
 function generateIssueHTML($issue,$associatedEntities=null) {
@@ -861,7 +862,7 @@ switch ($_GET['action']) {
 
 					foreach ($licenseArray as $license){
 						echo "<tr>\n";
-						echo "<td><a href='" . $licensingPath . $license['licenseID'] . "' target='_blank'>" . $license['licenseName'] . "</a></td>\n";
+						echo "<td><a href='" . $licensingPath . $license['licenseID'] . "' $target>" . $license['licenseName'] . "</a></td>\n";
 						echo "<td>" . $license['consortiumName'] . "</td>\n";
 						echo "<td>" . $license['status'] . "</td>\n";
 						echo "</tr>\n";
